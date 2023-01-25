@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} Tags {% endblock %}
+
+{% block content %} 
+<h1 class="app-heading">Tags</h1>
+<ul class="list-group">
+    {% for tag in tags %} 
+    <li class="list-group-item"><a id ="user-main" href="/tags/{{ tag.id }}">{{tag.name}}</a></li>
+    {% endfor %} 
+</ul>
+
+<button id="save_user_btn" class="btn btn-success"><a href="/tags/new"> Add Tag </a></button> 
+<button type="button" class="btn btn-primary"><a href="/"> Back to Home </a></button>   
+
+
+{% endblock %}

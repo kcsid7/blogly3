@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% block title %} New User Form {% endblock %}
+
+{% block content %} 
+<h1 class="app-heading">New User Form</h1>
+
+<form action="/users/new" method="POST">
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="image_url">Image Url</label>
+        <input type="text" name="image_url" class="form-control">
+    </div>
+    <button id="save_user_btn" type="submit" class="btn btn-success">Add User</button> 
+</form>
+
+<button type="button" class="btn btn-primary"><a href="/users"> Back to Home </a></button>   
+
+
+{% endblock %}

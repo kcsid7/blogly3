@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+
+{% block title %} Edit Tag Form {% endblock %}
+
+{% block content %} 
+<h1 class="app-heading">Edit Tag</h1>
+
+<form action="/tags/{{tags.id}}/edit" method="POST">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" value="{{tags.name}}">
+    </div>
+
+    <div id="post_section_add_new_tag">
+        <h3> All Posts </h3>
+        <div class="form-check form-group row">
+            {% for post in all_posts %}
+            <div>
+                <input class="form-input"
+                {% if post in tags.posts %}
+                checked
+                {% endif %}
+                name="posts"
+                value="{{ post.id }}"
+                type="checkbox"
+                id="post_{{ post.id }}"
+                >
+                <label class="form-check-label" for="post_{{ post.id }}">
+                    {{ post.title }}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <button id="save_user_btn" type="submit" class="btn btn-success">Save Tag</button> 
+</form>
+
+<button type="button" class="btn btn-primary"><a href="/tags">Back to Tags </a></button>   
+<button type="button" class="btn btn-primary"><a href="/users"> Back to Home </a></button>   
+
+
+{% endblock %}

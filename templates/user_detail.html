@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block title %} User Detail {% endblock %}
+
+{% block content %} 
+
+<div id="user_info">
+    <img src="{{user.image_url}}" alt="{{user.first_name}}" id="user_image">
+    <h3>{{user.first_name}} {{user.last_name}} </h3>
+</div>
+
+<button type="button" class="btn btn-primary"><a href="/users">Back to Home </a></button>   
+<button type="button" class="btn btn-secondary"><a href="/users/{{user.id}}/edit">Edit User</a></button>
+<button type="button" class="btn btn-success"><a href="/users/{{user.id}}/posts/new">Create New Post</a></button>
+
+
+<div class="container" id="user_posts">
+    <h2>{{user.first_name}}'s Posts</h2>
+
+    <ul class="list-group">
+        {% for post in posts %}
+            <li class="list-group-item post-list">
+                <a href="/posts/{{post.id}}">{{post.title}}</a>
+                <span>{{post.created_at.strftime("%m/%d/%Y")}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

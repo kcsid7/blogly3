@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block title %} Tag Detail {% endblock %}
+
+{% block content %} 
+
+
+<div class="container" id="user_posts">
+    <h1>{{tag.name}}</h2>
+        <button type="button" class="btn btn-primary"><a href="/tags">Back to Tags </a></button>   
+        <button type="button" class="btn btn-secondary"><a href="/tags/{{tag.id}}/edit">Edit Tag</a></button>
+        <button type="button" class="btn btn-danger"><a href="/tags/{{tag.id}}/delete">Delete Tag</a></button>
+
+    <ul class="list-group" >
+        {% for post in tag.posts %}
+            <li class="list-group-item post-list">
+                <a href="/posts/{{post.id}}">{{post.title}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

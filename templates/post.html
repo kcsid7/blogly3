@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+
+{% block title %} Post Detail {% endblock %}
+
+{% block content %} 
+<h1 class="app-heading">{{post.title}}</h1>
+
+
+<div id="button_grp">
+    <button type="button" class="btn btn-primary"><a href="/users">Back to Home </a></button>   
+    <button type="button" class="btn btn-primary"><a href="/users/{{user.id}}">Back to User </a></button>   
+    <button type="button" class="btn btn-warning"><a href="/tags">All Tags </a></button>   
+    <button type="button" class="btn btn-secondary"><a href="/posts/{{post.id}}/edit">Edit Post</a></button>
+    <button type="button" class="btn btn-danger"><a href="/posts/{{post.id}}/delete">Delete Post</a></button>
+</div>
+
+<div id="tags">
+    <strong>Tags: </strong>
+    {% if post.tags %}
+      {% for tag in post.tags %}
+      #<a href="/tags/{{tag.id}}">{{ tag.name }}</a>   |
+      {% endfor %}
+    {% endif %}
+</div>
+
+<div id="posts">
+    <div id="author_sec">
+        <img src="{{user.image_url}}" alt="{{user.first_name}}" id="user_image">
+        <h3>{{user.first_name}} {{user.last_name}} </h3>
+        <span><em>Created At: {{post.created_at.strftime("%m/%d/%Y")}}</em></span>
+    </div>
+
+    
+    <div id="post_content">
+        <p id="post_body">
+            {{post.content}}
+        </p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+#user_image {
+    width: 200px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+#save_user_btn {
+    margin: 2rem 0;
+    width: 100px;
+}
+
+#user-edit-form-btns {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.list-group-item {
+    border-top: none;
+    border-right: none;
+}
+
+.app-heading {
+    margin: 3rem 0;
+}
+
+#user_posts {
+    margin-top: 3rem;
+}
+
+#user_posts ul {
+    margin-top: 3rem;
+}
+
+.post-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+#posts {
+    display: flex;
+    margin-top: 3rem;
+}
+
+#author_sec {
+    width: 250px;
+    text-align: center;
+    padding: 0 2rem;
+}
+#post_content {
+    border-left: 2px solid gray;
+    padding: 2em 4em;
+}
+
+#user_info {
+    margin-top: 3rem;
+}
+
+#flashed-messages{
+     background-color: lightgreen;
+     margin-top: 2rem;
+     text-align: center;
+     font-size: medium;
+     font-weight: 400;
+}
+
+#post_section_add_new_tag {
+    margin-top: 3rem;
+}
+
+#tags {
+    margin: 2rem 0;
+}

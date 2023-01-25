@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} Users {% endblock %}
+
+{% block content %} 
+<h1 class="app-heading">Users</h1>
+<ul class="list-group">
+    {% for user in users %} 
+    <li class="list-group-item"><a id ="user-main" href="/users/{{ user.id }}">{{user.first_name}} {{user.last_name}}</a></li>
+    {% endfor %} 
+</ul>
+
+<button id="save_user_btn" class="btn btn-success"><a href="/users/new"> Add User </a></button> 
+<button id="save_user_btn" class="btn btn-success"><a href="/tags"> Tags </a></button> 
+
+
+{% endblock %}
